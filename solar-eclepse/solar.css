@@ -1,0 +1,80 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100vw;
+height: 100vh;
+background-color: rgba(252, 155, 8, 0.609);
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.universe{ width: 50vw; aspect-ratio: 1; background-color: rgba(255, 255, 255, 0.368); display: flex; align-items: center; justify-content: center; animation:uni 12s ease-in-out infinite ; -webkit-animation:uni 12s ease-in-out infinite ;
+}
+.sun{ width: 20vw; aspect-ratio: 1; background-color: #d0e7f1; border-radius:50% ; -webkit-border-radius:50% ; -moz-border-radius:50% ; -ms-border-radius:50% ; -o-border-radius:50% ; 
+   position: relative;
+   overflow: hidden;
+ 
+}
+.sun::after{
+    content: "";
+    width: 20vw;
+    aspect-ratio: 1;
+    background-color: rgb(251, 0, 0);
+    position: absolute;
+   
+    top: 0;
+    left: 0;
+    border-radius:inherit ;
+    animation:sun-sun 12s ease-in-out infinite alternate;
+    -webkit-animation:sun-sun 12s ease-in-out infinite alternate;
+    -webkit-border-radius:inherit ;
+    -moz-border-radius:inherit ;
+    -ms-border-radius:inherit ;
+    -o-border-radius:inherit ;
+}
+@keyframes uni {
+    0%{
+        background-color:rgba(157, 187, 228, 0.609) ;
+    }
+50%{
+    background-color: black;
+}
+100%{
+    background-color:rgba(157, 187, 228, 0.609) ;
+}
+}
+
+
+
+
+
+
+
+
+
+@keyframes sun-sun {
+    0%{
+translate: 100%;
+
+    }
+50%{
+    translate:0% ;
+    scale: 0.95;
+}
+100%{
+    translate: -100%;
+}
+
+
+}
+
+
+
+
