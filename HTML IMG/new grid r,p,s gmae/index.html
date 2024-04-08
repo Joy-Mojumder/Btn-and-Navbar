@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new grid r,p,s game</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anta&family=Anton&family=Caveat:wght@400..700&family=Jacquarda+Bastarda+9&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lakki+Reddy&family=Micro+5&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #4B4453;
+display: flex;
+justify-content: center;
+
+}
+.grid-item-1,.grid-item-2,.grid-item-3,.grid-item-4,.grid-item-5,.grid-item-6{
+text-transform: capitalize;
+font-size: 2.3rem;
+font-weight: bold;
+letter-spacing: .2rem;
+font-family: "Urbanist", sans-serif;
+color: #FEFEDF;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.container-grid{
+ margin-top: 2rem;
+/* background-color: #fff; */
+display: grid;
+grid-template-rows: repeat(4,15rem);
+grid-template-columns: repeat(3,1fr);
+gap: 1rem;
+}
+.grid-item-1{
+width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+    background-color: #845EC2;
+    justify-self: end;
+align-self: center;
+}
+.grid-item-2{
+    width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+justify-self: center;
+align-self: center;
+    background-color: #D65DB1;
+}
+.grid-item-3{
+    width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+align-self: center;
+    background-color: #FF6F91;
+}
+.grid-item-4{
+    width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+    background-color: #FF9671;
+    align-self: end;
+}
+.grid-item-5{
+    width: 10rem;
+aspect-ratio: 1;
+    /* background-color: #FFC75F; */
+    align-self: end;
+  
+}
+.grid-item-6{
+    width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+    background-color: #F9F871;
+    align-self: end;
+
+}
+.container-text{
+    /* background-color: #D65DB1; */
+    width: 40rem;
+height: 3rem;   
+align-self: center;
+grid-column: 1/4;
+text-align: center;
+font-size: 2rem;
+font-weight: bold;
+letter-spacing: .2rem;
+font-family: "Urbanist", sans-serif;
+text-transform: capitalize;
+}
+.btn{
+grid-area: 4/2;
+align-self: center;
+justify-self: center;
+padding: 1rem 4rem;
+align-self: self-start;
+}
+
+
+</style>
+</head>
+<body>
+ <div class="container-grid">
+<div class="grid-item-1"><h1> class="heading">item-1</h1></div>
+<div class="grid-item-2"><h1> class="heading">item-2</h1></div>
+<div class="grid-item-3"><h1> class="heading">item-3</h1></div>
+<div class="grid-item-4">< class="heading">item-4</h1></div>
+<div class="grid-item-5"><h1> class="heading">VS</h1></div>
+<div class="grid-item-6"><h1> class="heading">item-6</h1></div>
+ <div class="container-text">text</div>
+<button
+    type="submit"
+    class="btn btn-primary"
+    style="display: inline-block;"
+>
+    Submit
+</button>
+
+</div> 
+</body>
+</html>

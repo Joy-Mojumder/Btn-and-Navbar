@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper sizer game</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anta&family=Anton&family=Caveat:wght@400..700&family=Jacquarda+Bastarda+9&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lakki+Reddy&family=Micro+5&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    html{
+    font-size: 62.5%;
+}
+.heading-1,.heading-2,.heading-3{
+color:#3f3f3f ;
+font-weight: 900;
+font-size: 2.5rem;
+    font-family: "Urbanist", sans-serif;
+text-transform: capitalize;
+margin-top: 1rem;
+}
+.container-1,.container-2,.container-3{
+background-color: #d4f32294;
+width: 10rem;
+aspect-ratio: 1;
+display: flex;
+border-radius: 50%;
+justify-content: center;
+align-items: center;
+margin-left: 2rem;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+cursor: pointer;
+}
+:is(.container-1,.container-2,.container-3):hover{
+    background-color: #ffffff1a;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+transition: all .3s linear;
+text-shadow: .1rem .1rem .2rem rgb(0, 0, 0);
+}
+body{
+    background-color: #FBC0F8;
+}
+.parent{
+display: flex;
+justify-content: center;
+margin-top: 15rem;
+position: relative;
+}
+.container-4{
+    margin-top: 10rem;
+text-align: center;
+}
+.para{
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+font-weight: 800;
+    font-family: "Urbanist", sans-serif;
+text-transform: capitalize;
+background-color: rgba(0, 128, 0, 0.719);
+width: 45rem;
+margin: 0 auto;
+
+}
+.para-2{
+    color: rgb(250, 250, 250);
+    font-size: 2.5rem;
+font-weight: 800;
+    font-family: "Urbanist", sans-serif;
+text-transform: capitalize;
+background-color: rgba(255, 0, 0, 0.68);
+width: 45rem;
+margin: 0 auto;
+
+}
+.para-3{
+    color: rgb(250, 250, 250);
+    font-size: 2.5rem;
+font-weight: 800;
+    font-family: "Urbanist", sans-serif;
+text-transform: capitalize;
+background-color: rgba(217, 0, 255, 0.687);
+width: 45rem;
+margin: 0 auto;
+}
+.reload{
+display: inline-block;
+font-size: 2rem;
+color: #6c6c6c;
+border-radius: 1rem;
+border: .2rem solid ;
+background-color: #ffffff4c;
+padding:1rem 4rem;
+margin-left: 70rem;
+margin-top: 5rem;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+cursor: pointer;
+}
+.reload:hover{
+    background-color: #ffffff1a;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+transition: all .3s linear;
+text-shadow: .1rem .1rem .2rem rgb(0, 0, 0);
+}
+.container-display-onoff-1,.container-display-onoff-2,.container-display-onoff-3{
+    position: absolute;
+    background-color: #41f3227a;
+width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+margin-left: 2rem;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+cursor: pointer;
+left: 62rem;
+text-align: center;
+margin-top: 5rem;
+}
+.container-display-onoff-4,.container-display-onoff-5,.container-display-onoff-6{
+    position: absolute;
+    background-color: #f3222277;
+width: 10rem;
+aspect-ratio: 1;
+border-radius: 50%;
+text-align: center;
+margin-left: 2rem;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+cursor: pointer;
+left: 80rem;
+margin-top: 5rem;
+
+}
+.vs{
+font-size: 4rem;
+top: 33rem;
+left: 75rem;
+position: absolute;
+color:#6c6c6c ;
+font-weight: 900;
+    font-family: "Urbanist", sans-serif;
+}
+.head{
+position: absolute;
+top: 5rem;
+left: 42rem;
+font-size: 4rem;
+text-transform: capitalize;
+font-family: "Urbanist", sans-serif;
+letter-spacing: .3rem;
+word-spacing: .3rem;
+color:#ffde4e ;
+text-shadow: .1rem .1rem .3rem rgb(0, 0, 0);
+font-weight: bold;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="heading">
+    <h1 class="head">this is a rock, paper & sizer game</h1>
+</div>
+    <div class="parent">
+ <div class="container-1">
+    <h1 class="heading-1">rock</h1>
+ </div>   
+ <div class="container-2">
+    <h1 class="heading-2">paper</h1>
+ </div>   
+ <div class="container-3">
+     <h1 class="heading-3">sizer</h1>
+    </div> 
+</div> 
+<br> 
+<h1 class="vs">VS</h1>
+<div class="container-display-onoff-1" style="display: none;">
+    <h1 class="heading-1">rock</h1>
+</div>   
+<div class="container-display-onoff-2" style="display: none;">
+    <h1 class="heading-2">paper</h1>
+</div>   
+<div class="container-display-onoff-3" style="display: none;">
+    <h1 class="heading-3">sizer</h1>
+</div> 
+<div class="container-display-onoff-4" style="display: none;">
+   <h1 class="heading-1">rock</h1>
+</div>   
+<div class="container-display-onoff-5" style="display: none;">
+   <h1 class="heading-2">paper</h1>
+</div>   
+<div class="container-display-onoff-6" style="display: none;">
+    <h1 class="heading-3">sizer</h1>
+</div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-4"></div>
+<button
+    type="submit"
+    class="reload"
+>
+   Refresh
+</button>
+
+<script>
+let reload = document.querySelector('.reload');
+let containerRock = document.querySelector('.container-1');
+let containerPaper = document.querySelector('.container-2');
+let containerSizer = document.querySelector('.container-3');
+let containerText = document.querySelector('.container-4');
+let containerDisplay1 = document.querySelector('.container-display-onoff-1');
+let containerDisplay2 = document.querySelector('.container-display-onoff-2');
+let containerDisplay3 = document.querySelector('.container-display-onoff-3');
+let containerDisplay4 = document.querySelector('.container-display-onoff-4');
+let containerDisplay5 = document.querySelector('.container-display-onoff-5');
+let containerDisplay6 = document.querySelector('.container-display-onoff-6');
+
+
+let createAPara = document.createElement('p'); 
+createAPara.setAttribute("class","para")
+let createAPara2 = document.createElement('p'); 
+createAPara2.setAttribute("class","para-2")
+let createAPara3 = document.createElement('p'); 
+createAPara3.setAttribute("class","para-3")
+const randomNumberGenerator = Math.round(Math.random() * 2);
+let randomNumberStr = `${randomNumberGenerator}`;
+console.log(randomNumberStr);
+
+const containerFunc = (number) => {
+switch (number) {
+    case '0':
+   if (0<randomNumberGenerator&&2===randomNumberGenerator) {
+    containerText.append(createAPara);
+    createAPara.textContent = "your rock beat's sizer ,you won";
+containerDisplay1.setAttribute("style","display: block");
+containerDisplay6.setAttribute("style","display: block");
+
+   }else if (0<randomNumberGenerator&&1===randomNumberGenerator) {
+    containerText.append(createAPara2);
+    createAPara2.textContent = "your rock beaten by paper ,you lose";
+    containerDisplay1.setAttribute("style","display: block");
+containerDisplay5.setAttribute("style","display: block");
+   }else{
+    containerText.append(createAPara3);
+    createAPara3.textContent = "your rock beat's rock , so tie";
+    containerDisplay1.setAttribute("style","display: block");
+containerDisplay4.setAttribute("style","display: block");
+   }
+        break;
+    case '1':
+    if (1>randomNumberGenerator&&0===randomNumberGenerator) {
+    containerText.append(createAPara);
+    createAPara.textContent = "your paper beat's rock ,you won";
+    containerDisplay2.setAttribute("style","display: block");
+containerDisplay4.setAttribute("style","display: block");
+   }else if (1<randomNumberGenerator&&2===randomNumberGenerator) {
+    containerText.append(createAPara2);
+    createAPara2.textContent = "your paper beaten by sizer ,you lose";
+    containerDisplay2.setAttribute("style","display: block");
+containerDisplay6.setAttribute("style","display: block");
+   }else{
+    containerText.append(createAPara3);
+    createAPara3.textContent = "your paper beat's paper , so tie";
+    containerDisplay2.setAttribute("style","display: block");
+containerDisplay5.setAttribute("style","display: block");
+   }  
+        break;
+    case '2':
+    if (2>randomNumberGenerator&&1===randomNumberGenerator) {
+    containerText.append(createAPara);
+    createAPara.textContent = "your sizer beat's paper ,you won";
+    containerDisplay3.setAttribute("style","display: block");
+containerDisplay5.setAttribute("style","display: block");
+   }else if (2>randomNumberGenerator&&0===randomNumberGenerator) {
+    containerText.append(createAPara2);
+    createAPara2.textContent = "your sizer beaten by rock ,you lose";
+    containerDisplay3.setAttribute("style","display: block");
+containerDisplay4.setAttribute("style","display: block");
+   }else{
+    containerText.append(createAPara3);
+    createAPara3.textContent = "your sizer beat's sizer, so tie";
+    containerDisplay3.setAttribute("style","display: block");
+containerDisplay6.setAttribute("style","display: block");
+   } 
+        break;
+    default: 
+        break;
+}
+}
+containerRock.addEventListener('click', () => {
+    containerFunc("0");
+});
+containerPaper.addEventListener('click', () => {
+    containerFunc("1");
+});
+containerSizer.addEventListener('click', () => {
+    containerFunc("2");
+});
+reload.addEventListener('click', () => {
+    window.location.reload()
+});
+</script>
+</body>
+</html>
