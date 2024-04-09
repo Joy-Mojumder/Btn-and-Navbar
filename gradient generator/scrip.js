@@ -9,15 +9,13 @@ for(num = 0;num<6;num++){
     finalCode = finalCode + `${colorCode[Math.trunc(Math.random()*16)]}`;
 }
 return finalCode;
-};
-
-
+}
 
 const clickBtnOne = () =>{
  let leftBtn = randomCode();
    document.body.style.backgroundImage=`linear-gradient(to right top, ${leftBtn}, ${btnTwo.textContent})`;
    copyPara.textContent = `background-image: linear-gradient(to right top, ${leftBtn}, ${btnTwo.textContent})`;
-   btnOne.textContent = `${leftBtn}`
+   btnOne.textContent = `${leftBtn}`;
    btnOne.style.backgroundColor = `${leftBtn}`;
    return leftBtn;
 }
@@ -25,7 +23,7 @@ const clickBtnTwo = () =>{
     let rightBtn = randomCode();
     document.body.style.backgroundImage=`linear-gradient(to right top, ${btnOne.textContent}, ${rightBtn})`;
     copyPara.textContent = `background-image: linear-gradient(to right top, ${btnOne.textContent}, ${rightBtn})`;
-    btnTwo.textContent = `${rightBtn}`
+    btnTwo.textContent = `${rightBtn}`;
     btnTwo.style.backgroundColor = `${rightBtn}`;
 }
 copyPara.addEventListener("click",() =>{
