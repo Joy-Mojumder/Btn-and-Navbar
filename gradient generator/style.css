@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Anton&family=Caveat:wght@400..700&family=Courgette&family=Jacquarda+Bastarda+9&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lakki+Reddy&family=Micro+5&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 40vw;
+    height: 60vh;
+    /* background:red; */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+.btn-1{
+    padding: 1.4rem 5rem;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    background-color:#051937;
+    color: #ffffffcb;
+    margin-right: 5rem;
+    box-shadow: 0 0 1rem .1rem #0000006f;
+}
+.btn-2{
+    padding: 1.4rem 5rem;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    background-color:#a8eb12;
+    color: #ffffffdd;
+    box-shadow: 0 0 1rem .1rem #0000006e;
+}
+.heading{
+    font-size: 3.4rem;
+    color: antiquewhite;
+    text-shadow:.2rem .3rem .1rem rgb(86, 78, 78);
+    font-weight: 900;
+    letter-spacing: .15rem;
+    word-spacing: .4rem;
+}
+.enter-color,.section-copy--para{
+    font-size: 1.8rem;
+    color: antiquewhite;
+    text-shadow:.2rem .2rem .1rem rgb(86, 78, 78);
+    font-weight: 900;
+    letter-spacing: .15rem;
+    word-spacing: .4rem;
+}
+.copy-div{
+    width:45rem ;
+    height: 7rem;
+    padding: 1.5rem 3rem;
+    background-color: #ffffff2f;
+    line-height: 1.56;
+    color: #fff;
+    border-radius:1rem ;
+    -webkit-border-radius:1rem ;
+    -moz-border-radius:1rem ;
+    -ms-border-radius:1rem ;
+    -o-border-radius:1rem ;
+    border-left: .3rem solid #fff;
+
+
+  & p{
+    font-size: 1.5rem;
+  }
+}
