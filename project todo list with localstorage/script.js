@@ -73,4 +73,3 @@ listItems.addEventListener("click",(event) => {
 inputBtn.addEventListener('click', (event) => {
     inputBtnClickEvent(event);
 });
-
