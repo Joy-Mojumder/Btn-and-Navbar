@@ -262,28 +262,28 @@ body{
     align-self: center;
     justify-self: center;
     grid-area: 1/2;
-    & .btn{
-    padding: .8rem 4rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    border: none;
-    border-radius: .5rem;
-    -webkit-border-radius: .5rem;
-    -moz-border-radius: .5rem;
-    -ms-border-radius: .5rem;
-    -o-border-radius: .5rem;
-    letter-spacing: .15rem;
-    margin-top: 3rem;
-    transition:all .2s linear ;
-    -webkit-transition:all .2s linear ;
-    -moz-transition:all .2s linear ;
-    -ms-transition:all .2s linear ;
-    -o-transition:all .2s linear ;
-    border: .1rem solid #ffffff;
-    cursor: pointer;
 }
+.btn{
+padding: .8rem 4rem;
+font-size: 1.5rem;
+font-weight: 700;
+border: none;
+border-radius: .5rem;
+-webkit-border-radius: .5rem;
+-moz-border-radius: .5rem;
+-ms-border-radius: .5rem;
+-o-border-radius: .5rem;
+letter-spacing: .15rem;
+margin-top: 3rem;
+transition:all .2s linear ;
+-webkit-transition:all .2s linear ;
+-moz-transition:all .2s linear ;
+-ms-transition:all .2s linear ;
+-o-transition:all .2s linear ;
+border: .1rem solid #ffffff;
+cursor: pointer;
 }
-.win-status .btn:hover{
+.btn:hover{
        background-color:transparent;
         color: #ffffff;
 }
@@ -292,4 +292,43 @@ body{
     font-size: 3.5rem;
     letter-spacing: .15rem;
 }
-
+.popUpFor-you--Div,.popUpFor-com--Div{
+    width: 55rem;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    top: -7rem;
+    z-index: 3;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    animation: popUp .5s ease-in;
+    -webkit-animation: popUp .4s ease-in;
+}
+.popUpFor-you--Div{
+    background-color: #00ff37d4;
+}
+.popUpFor-com--Div{
+    background-color: #ff0000dd;
+}
+.popUp-heading{
+    color: #ffffff;
+    font-size: 5rem;
+}
+@keyframes popUp {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale:1;
+    }
+}
+.popUp{
+    font-size: 4rem;
+    color: #ee00ff;
+}
