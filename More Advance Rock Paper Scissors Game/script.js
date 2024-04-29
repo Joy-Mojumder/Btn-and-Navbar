@@ -94,9 +94,7 @@ createElem.addEventListener("click",(event) => {
 if(event.target.classList.contains("btn")){
     pRsContainer.style.display = "grid";
     createElem.remove();
-    createElem.firstElementChild.nextElementSibling.remove();
-    createElem.firstElementChild.remove();
-    createElem.lastElementChild.remove();
+    createElem.innerHTML = "";
 }
 })
 popUpYou.addEventListener("click",(event) => {
