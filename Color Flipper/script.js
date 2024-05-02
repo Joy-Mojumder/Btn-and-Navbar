@@ -33,7 +33,7 @@ document.querySelector(".simple").style.backgroundColor = " rgba(58, 58, 58, 0.7
 main.addEventListener("click",(e) => {
     if(e.target.classList.contains("heading")){
         navigator.clipboard.writeText(document.querySelector(".heading").textContent);
-    alert(`Copy: \n${document.querySelector(".heading").textContent}`);
+    alert(`You Copy The Code: \n${document.querySelector(".heading").textContent}`);
     }
     if(e.target.classList.contains("btn")){
         simpleColorChangeFunc();
