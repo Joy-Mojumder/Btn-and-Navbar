@@ -1,41 +1,56 @@
-const counter = document.querySelector('.section-counter');
-const num =  document.querySelector('.number');
+const numDiv =  document.querySelector('.number');
+const text = document.querySelector('.time-text');
 let number = 0;
+let num = 0;
+
+let interval;
 
 const startTimerFunc = () => {
-    number = ++number;
-    num.textContent = `${number}`
+   interval = setInterval(() => {
+        numDiv.textContent = ++number; 
+    },1000);
 }
-let start = setInterval(startTimerFunc,1000);
-clearInterval(start);
-
-
 const stopTimerFunc = () => {
-
-    clearInterval(start);
+    clearInterval(interval);
+}
+const resetTimerFunc = () => {
+    number = 0;
+    numDiv.textContent = "0";
+    clearInterval(interval);
+}
+const getTimeFunc = (change) => {
+    let createElem = document.createElement('p');
+    createElem.classList.add("get-time");
+    createElem.innerText = `Your ${change} Is ${numDiv.innerText}`;
+    text.append(createElem);
+}
+const maximumParaFunc = (change1) => {
+    getTimeFunc(change1);
+    num = ++num;
+    if(num===4){
+        num = 0;
+        text.innerHTML = "";
+        getTimeFunc(change1);
+    }
 }
 
-
-console.log(startTimerFunc());
-
-
-
-
-
-counter.addEventListener("click",(event) => {
+document.body.addEventListener("click",(event) => {
     let evenTarClass = event.target.classList;
-if(evenTarClass.contains("btn1")){
-    setInterval(startTimerFunc,1000);
+if(evenTarClass.contains("start")){
 startTimerFunc();
 }
-if(evenTarClass.contains("btn3")){
+if(evenTarClass.contains("stop")){
     stopTimerFunc();
+    maximumParaFunc("StopTime");
 }
-
-
+if(evenTarClass.contains("reset")){
+    maximumParaFunc("ResetTime");
+resetTimerFunc();
+}
+if(evenTarClass.contains("left")){
+    maximumParaFunc("GetTime");
+}
+if(evenTarClass.contains("right")){
+text.innerHTML = "";
+}
 });
-
-
-
-
-
