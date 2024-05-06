@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variant Generate Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <div class="nav"><a href="index.html">Back To Main Origin</a></div>
+    <div class="multi-color">
+    <div class="color-popLong"></div>
+<i class="fa-solid fa-plus plus"></i>
+</div>
+<script>
+    const popLong = document.querySelector('.color-popLong');
+    const multiColor = document.querySelector('.multi-color');
+    const whenCopyPopUpf = (app) => {
+    let copyDiv = document.createElement('div');
+    copyDiv.classList.add("copy-div");
+    copyDiv.innerText = ` Color Code Copied`;
+    app.append(copyDiv);
+    setInterval(() => {
+        copyDiv.remove();
+    },2000)
+}
+    const showLocalStorFunc = () => {
+let getLocalS = JSON.parse(localStorage.getItem("bg-color"));
+console.log(getLocalS);
+popLong.style.backgroundColor = `${getLocalS}`;
+popLong.innerHTML = `${getLocalS}<i class="fa-solid fa-copy"></i>`;
+}
+showLocalStorFunc();
+document.body.addEventListener("click",(event) => {
+    let evenTar = event.target.parentElement;
+        if(event.target.classList.contains("plus")){
+            let colorCodeStr = "0123456789ABCDEF";
+            let hexColor = "";
+            for(let i = 0; i <= 2; i++){
+                let randomCode = colorCodeStr[Math.trunc(Math.random() * 16)];
+                hexColor = hexColor + randomCode;
+            }
+            let arr = popLong.innerText.split("");
+           let color = arr.splice(0,7);
+           let string = color.join("");
+            let str = string.slice(4,7);
+           let randomR = string.replace(`${str}`,`${hexColor}`);
+            let createElem = document.createElement('div');
+            createElem.classList.add("color-popLong");
+            createElem.innerHTML = `${randomR}<i class="fa-solid fa-copy"></i>`;
+            createElem.style.backgroundColor = randomR;
+            multiColor.append(createElem);  
+        }
+        if(event.target.classList.contains("fa-copy")){
+      whenCopyPopUpf(evenTar);
+      let arr = evenTar.innerText.split("");
+      let color = arr.splice(0,7);
+      let str = color.join("");
+        navigator.clipboard.writeText(str);
+}
+})
+</script>
+</body>
+</html>

@@ -24,8 +24,8 @@ const createMultiDivF = (numb) => {
         main.append(createElem);        
     }
 }
-createMultiDivF(45);
-let num = 0;
+createMultiDivF(100);
+
 const whenCopyPopUpf = (app) => {
     let copyDiv = document.createElement('div');
     copyDiv.classList.add("copy-div");
@@ -35,14 +35,19 @@ const whenCopyPopUpf = (app) => {
         copyDiv.remove();
     },2000)
 }
+const localStorFunc = (chan) => {
+    let str = JSON.stringify(chan);
+localStorage.setItem("bg-color",`${str}`);
+}
 
 const popUpSelectFunc = (event) => {
     let eventTar = event.target;
 pop.style.display = "grid";
-pop.innerHTML = `<i class="fa-solid fa-xmark"></i><i class="fa-solid fa-plus plus"></i>`;
-let create = document.createElement('div');
-create.innerHTML = `<i class="fa-solid fa-copy"></i>`;
-eventTar.append(create);
+pop.innerHTML = `<h1>Hex Code:\n ${eventTar.textContent}</h1><i class="fa-solid fa-xmark"></i><i class="fa-solid fa-copy"></i><p>Or</p><a class="anchor" href="palette.html">Create Variant</a>`;
+
+localStorFunc(eventTar.textContent);
+document.querySelector(".anchor").style.backgroundColor = `${eventTar.innerText}`;
+pop.style.backgroundColor = `${eventTar.innerText}`;
 classLAddaRemove(eventTar,"color-popLong","color-div");
 pop.append(eventTar);
 eventTar.addEventListener("click",(e) => {
@@ -50,9 +55,11 @@ eventTar.addEventListener("click",(e) => {
       whenCopyPopUpf(eventTar);
         navigator.clipboard.writeText(eventTar.textContent);
     }
-})
+});
 }
 document.body.addEventListener("click",(event) => {
+    let evenTar = event.target.parentElement;
+
     if(event.target.classList.contains("color-div")){
         document.body.classList.add("active-popUp");
         document.querySelectorAll('.color-div').forEach((curElem) => {
@@ -69,40 +76,17 @@ document.body.addEventListener("click",(event) => {
         main.append(createElem);  
     }
     if(event.target.classList.contains("fa-xmark")){
-        num = 0;
         pop.style.display = "none";
         document.querySelectorAll('.color-pop').forEach((curElem) => {
             classLAddaRemove(curElem,"color-div","color-pop");
         })
         document.body.classList.remove("active-popUp");
     }
-    if(num<=13){
-    console.log(num);
-        if(event.target.classList.contains("plus")){
-            num = ++num;
-            let colorCodeStr = "0123456789ABCDEF";
-            let hexColor = "";
-            for(let i = 0; i <= 1; i++){
-                let randomCode = colorCodeStr[Math.trunc(Math.random() * 16)];
-                hexColor = hexColor + randomCode;
-            }
-            let random = document.querySelector(".color-popLong").innerText;;
-            let str = random.slice(5,7);
-           let randomR = random.replace(`${str}`,`${hexColor}`);
-            let createElem = document.createElement('div');
-            createElem.classList.add("color-popLong");
-            createElem.textContent = `${randomR}`;
-            let create = document.createElement('div');
-            create.innerHTML = `<i class="fa-solid fa-copy"></i>`;
-            createElem.append(create);
-            createElem.style.backgroundColor = randomR;
-            pop.append(createElem);  
-            createElem.addEventListener("click",(e) => {
-                if(e.target.classList.contains("fa-copy")){
-                    whenCopyPopUpf(createElem);
-                    navigator.clipboard.writeText(randomR);
-                }
-            })
-        }
-    }
+    if(event.target.classList.contains("fa-copy")){
+        whenCopyPopUpf(evenTar);
+        let arr = evenTar.innerText.split("");
+        let color = arr.splice(10,7);
+        let str = color.join("");
+          navigator.clipboard.writeText(str);
+  }
 });
