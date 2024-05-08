@@ -42,11 +42,10 @@ const randomJokeApiFunc = () => {
     }).then((data) => {
        Joke.innerText = `${data.joke}`;
        let randomNum = Math.trunc(Math.random() * 9);
-       console.log(randomNum);
        image.src = imgArr[randomNum].img; 
     }).catch((error) => {
         console.log(error);
-        Joke.innerText = `${error}`;
+        Joke.innerText = `Failed To Load Joke,Please Check Your Internet Connection...`;
     });
 }
 window.addEventListener("DOMContentLoaded",randomJokeApiFunc);
