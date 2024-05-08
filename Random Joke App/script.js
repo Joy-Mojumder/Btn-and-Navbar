@@ -21,6 +21,15 @@ const imgArr = [
     },
     {
         img : "http://127.0.0.1:5501/Random%20Joke%20App/images/smiling_face_with_sunglasses.png"
+    },
+    {
+        img : "http://127.0.0.1:5501/Random%20Joke%20App/images/slightly_smiling_face (2).png"
+    },
+    {
+        img : "http://127.0.0.1:5501/Random%20Joke%20App/images/grinning_face_with_sweat (1).png"
+    },
+    {
+        img : "http://127.0.0.1:5501/Random%20Joke%20App/images/winking_face.png"
     }
 ]
 const randomJokeApiFunc = () => {
@@ -32,18 +41,16 @@ const randomJokeApiFunc = () => {
        return response.json();
     }).then((data) => {
        Joke.innerText = `${data.joke}`;
-     
+       let randomNum = Math.trunc(Math.random() * 9);
+       console.log(randomNum);
+       image.src = imgArr[randomNum].img; 
     }).catch((error) => {
         console.log(error);
+        Joke.innerText = `${error}`;
     });
-}
-const randomImageFunc = () => {
-    let randomNum = Math.trunc(Math.random() * 5);
-     image.src = imgArr[randomNum].img;
 }
 window.addEventListener("DOMContentLoaded",randomJokeApiFunc);
   
 Btn.addEventListener("click" ,() => {
 randomJokeApiFunc();
-randomImageFunc();
 });
