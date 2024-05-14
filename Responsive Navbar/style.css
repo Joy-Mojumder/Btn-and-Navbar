@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Anton&family=Caveat:wght@400..700&family=Courgette&family=Jacquarda+Bastarda+9&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lakki+Reddy&family=Micro+5&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Urbanist", sans-serif;
+    letter-spacing: .14rem;
+    line-height: 1.5;
+    border: none;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./image/pexels-shkrabaanthony-4348401.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+/*& navbar section */
+
+.section-navbar{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5rem);
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem 7rem;
+    text-transform: uppercase;
+    gap: 2rem;
+    text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, 0.334);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.logo a{
+    font-size: 3rem;
+    color: #ffffff;
+}
+.navbar .nav-items{
+    display: flex;
+    margin-right: 6rem;
+    gap: 6rem;
+    & a{
+    text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, 0.727);
+        font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+    &:hover:after{
+        content: "";
+        width: 60%;
+        border-bottom: .3rem solid #ffffff;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        animation: after .3s linear;
+        -webkit-animation: after .3s linear;
+        border-radius: 5rem;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        -ms-border-radius: 5rem;
+        -o-border-radius: 5rem;
+}
+    &:hover:before{
+        content: "";
+        width: 60%;
+        border-bottom: .3rem solid #ffffff;
+        position: absolute;
+        top: 110%;
+        right: 50%;
+        animation: after .3s linear;
+        -webkit-animation: after .3s linear;
+        border-radius: 5rem;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        -ms-border-radius: 5rem;
+        -o-border-radius: 5rem;
+}
+    }
+}
+@keyframes after {
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 30%;
+    }100%{
+        width: 60%;
+    }
+}
+.menu-btn{
+    background-color: transparent;
+    display: none;
+    & .fa-solid{
+        font-size: 2.6rem;
+        color: #ffffff;
+        cursor: pointer;
+    }
+}
+/*^ responsive for mobile part*/
+
+@media (width<=1020px) {
+    html{
+        font-size: 54%;
+    }
+    .menu-btn{
+        display: block;    
+        justify-self: end;    
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    overflow: hidden;
+    column-gap: 0;
+    }
+    .navbar{
+        grid-area: 2/1/3/3;
+    }
+   .navbar .nav-items{
+    flex-direction: column;
+    align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+        padding: 2rem;
+        margin-right: 0;
+}
+.overflow{
+    height: 30rem;
+    transition: height .3s linear;
+    -webkit-transition: height .3s linear;
+    -moz-transition: height .3s linear;
+    -ms-transition: height .3s linear;
+    -o-transition: height .3s linear;
+}
+.fa-xmark{
+    animation:rotate .4s linear;
+    -webkit-animation:rotate .4s linear;
+}
+}
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }50%{
+        rotate: 45deg;
+    }100%{
+        rotate: 90deg;
+    }
+}
