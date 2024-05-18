@@ -15,7 +15,7 @@ const checkFunc = (c1) => {
     let str = `${c1}`;
     let reminder = c1 % 2;
     // integer section
-    if(!str.includes(".") && str !== "" && c1 !== undefined){
+    if(str.length <= 3){
         document.querySelectorAll('.number').forEach((curEle) => {
             curEle.innerText = c1;
         });
@@ -25,7 +25,7 @@ const checkFunc = (c1) => {
         para_pa[3].innerText = `Is a Prime Number`;
         yes_no[0].innerText = `Yes`;
     // even or odd section
-    if(!str.includes("0")){
+    if(str.indexOf("0") !== 0){
         if(reminder===0){
         yes_no[1].innerText = `Yes`;
         yes_no[2].innerText = `No`;
@@ -34,8 +34,9 @@ const checkFunc = (c1) => {
             yes_no[2].innerText = `Yes`;
         }
         // divisible section
+        if(!str.includes("-")){
     let arr = [];
-    for(let i = 1; i <= 1000; i++){
+    for(let i = 1; i <= 999; i++){
         let num = c1 % i;
         if(!num){
             arr.push(i)
@@ -48,10 +49,17 @@ const checkFunc = (c1) => {
     }else{
         yes_no[3].innerText = `No`;
     }
+}else{
+    yes_no[3].innerText = `No`;
 }
 }else{
-    yes_no[0].innerText = `No`;
+    yes_no[1].innerText = `No`;
+    yes_no[2].innerText = `No`;
+    yes_no[3].innerText = `No`;
 }
+    }else{
+        document.querySelector('.divisible').innerText = `${c1} Is Too Big\n Try Less`;
+    }
 }
 document.querySelector(".form").addEventListener('submit', (e) => {
     e.preventDefault();
